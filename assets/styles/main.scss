@@ -1,0 +1,165 @@
+body {
+    background-color: #eeeaea;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100vh;
+
+
+}
+
+
+.container {
+    width: 780px;
+
+    border: 1px solid black;
+    border-radius: 1.2rem;
+
+    padding: 35px 40px;
+
+    background-color: #000;
+    color: #fff;
+
+
+    & ul {
+        display: flex;
+    }
+}
+
+
+header {
+    color: #cccccc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px 0;
+
+    & h2 {
+        font-size: 1.6rem;
+    }
+
+    & .column {
+        display: flex;
+        align-items: center;
+
+        & span {
+            font-weight: 500;
+            margin-right: 1rem;
+            font-size: 1.1rem;
+        }
+    }
+}
+
+.volume-slider {
+
+    & input {
+        accent-color: #fff;
+        border-radius: 2rem;
+        background: #4b4b4b;
+        appearance: none;
+    }
+}
+
+.keys-check {
+    & input {
+        width: 4rem;
+        height: 1.9rem;
+        appearance: none;
+        background-color: #4b4b4b;
+        border-radius: 1.9rem;
+        cursor: pointer;
+
+        position: relative;
+
+
+        &::before {
+            content: "";
+
+            height: 1.5rem;
+            width: 1.5rem;
+
+            background-color: #808080;
+
+            border-radius: inherit;
+
+            position: absolute;
+            top: 50%;
+            left: 0.3rem;
+
+            transform: translateY(-50%);
+            transition: all 0.3s ease;
+        }
+
+        &:checked::before {
+            left: 2.1rem;
+
+            background-color: #cccccc;
+        }
+    }
+}
+
+.piano-keys {
+
+
+    & .key{
+        cursor: pointer;
+        user-select: none;
+        text-transform: uppercase;
+
+        position: relative;
+        
+
+        color: #a2a2a2;
+
+        
+        & span {
+            position: absolute;
+            bottom: 1.25rem;
+            
+            width: 100%;
+
+            text-align: center;
+            font-size: 1.3rem;
+
+        }
+
+        &.hide span {
+            display: none;
+        }
+
+        &.white {
+            width: 4.3rem;
+            height: 15rem; 
+
+
+            border-radius: .5rem;
+            background: linear-gradient(#fff 96%, #eee 4%);
+
+
+            &.active {
+                box-shadow: inset -5px 5px 20px rgba($color: #000000, $alpha: 0.3);
+                background: linear-gradient(to bottom #fff 0%, #eee 100%);
+            }
+        }
+
+        &.black {
+            width: 2.75rem;
+            height: 8.75rem; 
+
+            z-index: 2;
+
+            margin: 0 -1.3rem 0 -1.3rem;
+
+            border-radius: 0 0 .5rem .5rem;
+            background: linear-gradient(#333, #000);
+
+
+            &.active {
+                box-shadow: inset -5px 5px 10px rgba($color: #fff, $alpha: 0.1);
+                background: linear-gradient(to bottom #000 , #434343);
+            }
+        }
+    }
+}
